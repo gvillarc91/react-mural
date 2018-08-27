@@ -1,0 +1,41 @@
+{
+  "name": "react-mural",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "eslint": "^5.4.0",
+    "ramda": "^0.25.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.1.5",
+    "redux": "^4.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "eject": "react-scripts eject"
+  },
+  "jest": {
+    "setupFiles": [
+      "./src/setupTests.js"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*-{js, jsx}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules",
+      "/src/index.js"
+    ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.5.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "jest": "^23.5.0",
+    "prettier": "^1.14.2"
+  }
+}
