@@ -1,10 +1,10 @@
 import { connect } from "react-redux";
 import Board from "./Board";
 import { bindActionCreators } from "redux";
-import { addNote } from "../../actions/notes";
+import { addNote } from "../../actions/board";
 
-const mapStateToProps = ({ note }) => ({
-  notes: note.notes
+const mapStateToProps = ({ board }) => ({
+  notes: board.notes
 });
 
 const mapDispatchToProps = dispatch => ({

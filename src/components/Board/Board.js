@@ -9,7 +9,7 @@ export default class Board extends Component {
     notes: PropTypes.array
   };
 
-  clickHandler = () => {
+  doubleClickHandler = () => {
     const note = {};
 
     this.props.actions.addNote(note);
@@ -17,7 +17,7 @@ export default class Board extends Component {
 
   render() {
     return (
-      <Container className={"fullSize"} onDoubleClick={this.clickHandler}>
+      <Container className={"fullSize"} onDoubleClick={this.doubleClickHandler}>
         {this.props.notes &&
           this.props.notes.map(note => <Note id={note.id} />)}
       </Container>
