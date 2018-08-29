@@ -1,0 +1,4 @@
+.fullSize {
+  display: flex;
+  min-height: 100vh;
+  background-color: gray; }
