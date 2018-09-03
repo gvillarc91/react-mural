@@ -1,4 +1,4 @@
-import { ADD_NOTE } from "./types";
+import { ADD_NOTE, SELECT_NOTE } from "./types";
 import cuid from "cuid";
 
 export const addNote = note => ({

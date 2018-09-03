@@ -4,7 +4,8 @@ import { bindActionCreators } from "redux";
 import { addNote } from "../../actions/board";
 
 const mapStateToProps = ({ board }) => ({
-  notes: board.notes
+  notes: board.notes,
+  selectedNotes: board.selectedNotes
 });
 
 const mapDispatchToProps = dispatch => ({

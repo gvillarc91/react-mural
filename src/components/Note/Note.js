@@ -1,9 +1,29 @@
 import React, { Component } from "react";
 import Draggable from "react-draggable";
+import classnames from "classnames";
 import "./note.css";
 
 export default class Note extends Component {
+  state = {
+    isDragging: false
+  };
+  clickHandler = (e, id) => {
+    console.log("clickhandler:", this.state.isDragging);
+    console.log("click");
+    //Usar classnames para meterle una clase durante el click y que se seleccione
+    this.props.actions.selectNote(id);
+  };
+  doubleClickHandler = e => {
+    e.stopPropagation();
+
+    console.log("dblclick");
+  };
+
   render() {
+    const { text, selected } = this.props;
+    const classNames = classnames("note", {
+      selected: selected
+    });
     return (
       <Draggable
         key={this.props.id}
@@ -16,7 +36,13 @@ export default class Note extends Component {
         onDrag={this.handleDrag}
         onStop={this.handleStop}
       >
-        <div className="note" />
+        <div
+          className={classNames}
+          onDoubleClick={this.doubleClickHandler}
+          onClick={e => this.clickHandler(e, this.props.id)}
+        >
+          {text}
+        </div>
       </Draggable>
     );
   }
